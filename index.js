@@ -5,7 +5,7 @@ const moviesApi = require('./routes/movies');
 const { logErrors, errorHandler, wrapErrors } = require('./utils/middleware/errorHandlers');
 const notFoundHandler = require('./utils/middleware/notFoundHandler');
 const userMoviesApi = require('./routes/userMovies');
-
+const authApi = require('./routes/auth');
 
 const cors = require('cors');
 
@@ -14,6 +14,7 @@ app.use(cors());
 
 moviesApi(app);
 userMoviesApi(app);
+authApi(app);
 
 // Catch error 404
 app.use(notFoundHandler);

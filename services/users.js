@@ -16,7 +16,7 @@ class UsersService{
         const { name, email, password } = user;
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        const createdUserId = await this.mongoDB(this.collection, {
+        const createdUserId = await this.mongoDB.create(this.collection, {
             name,
             email,
             password: hashedPassword
