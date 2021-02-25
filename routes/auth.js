@@ -5,10 +5,9 @@ const jwt = require('jsonwebtoken');
 const ApiKeysService = require('../services/apiKeys');
 const usersService = require('../services/users');
 const validationHandler = require('../utils/middleware/validationHandler');
-const { createUserSchema } = require('../utils/schemas/users');
+const { createUserSchema, createProviderUserSchema } = require('../utils/schemas/users');
 const { config } = require('../config');
 const UsersService = require('../services/users');
-
 // Basic strategy
 require('../utils/auth/strategies/basic');
 
@@ -78,6 +77,40 @@ function authApi(app) {
             next(error);
         }
     });
+
+    router.post('/sign-provider', validationHandler(createProviderUserSchema), async function(req, res, next){
+        const { body } = req;
+        const { ...user } = body;
+
+        try {
+            
+            const queriedUser = await usersService.getOrCreateUser({user});
+            const { _id: id, name, email } = queriedUser;
+            const payload = {
+                sub: id,
+                name,
+                email,
+            }
+
+            const token = jwt.sign(payload, config.authJwtToken, {
+                expiresIn: '15m'
+            });
+
+            console.log(token);
+            return res.status(200).json({
+                token,
+                user: {
+                    id,
+                    name,
+                    email
+                }
+            })
+
+        } catch (error) {
+            return next(error);
+        }
+
+    })
 
 }
 
