@@ -15,7 +15,7 @@
     ],
     "env": {
         "DB_USER": "jair",
-        "DB_PASSWORD": "alferick14",
+        "DB_PASSWORD": "pruebas123",
         "DB_HOST": "cluster0.qbjff.mongodb.net",
         "DB_NAME": "movies_db"
     }

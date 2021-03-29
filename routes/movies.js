@@ -36,7 +36,7 @@ function moviesApi(app){
             next(err);
         }
     })
-    router.get("/:movieId", passport.authenticate('jwt', { session: false }), validationHandler({ movieId: movieIdSchema }, 'params'),  async function(req, res, next){
+    router.get("/:movieId", passport.authenticate('jwt', { session: false }),  async function(req, res, next){
 
         cacheResponse(res, SIXTY_MINUTES_IN_SECONDS);
         const { movieId } = req.params;
@@ -50,7 +50,7 @@ function moviesApi(app){
             next(err);
         }
     })
-    router.post("/", passport.authenticate('jwt', { session: false }), validationHandler(createMovieSchema), async function(req, res, next){
+    router.post("/", passport.authenticate('jwt', { session: false }), async function(req, res, next){
 
         const { body: movie } = req;
 
@@ -64,7 +64,7 @@ function moviesApi(app){
             next(err);
         }
     })
-    router.put("/:movieId", passport.authenticate('jwt', { session: false }), validationHandler({ movieId: movieIdSchema }, 'params'), validationHandler(updateMovieSchema), async function(req, res, next){
+    router.put("/:movieId", passport.authenticate('jwt', { session: false }), async function(req, res, next){
         const { body: movie } = req;
         const { movieId } = req.params;
         try{

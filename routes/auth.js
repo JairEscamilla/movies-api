@@ -3,7 +3,6 @@ const passport = require('passport');
 const boom = require('@hapi/boom');
 const jwt = require('jsonwebtoken');
 const ApiKeysService = require('../services/apiKeys');
-const usersService = require('../services/users');
 const validationHandler = require('../utils/middleware/validationHandler');
 const { createUserSchema } = require('../utils/schemas/users');
 const { config } = require('../config');

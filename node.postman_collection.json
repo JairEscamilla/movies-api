@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "ee068536-9a02-4ae9-b31b-5708183e2662",
+		"name": "node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear pelicula",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxhbiIsImVtYWlsIjoicHJ1ZWJhc0BnbWFpbC5jb20iLCJzY29wZXMiOlsic2lnbmluOmF1dGgiLCJzaWdudXA6YXV0aCIsInJlYWQ6bW92aWVzIiwicmVhZDp1c2VyLW1vdmllcyIsImNyZWF0ZTp1c2VyLW1vdmllcyIsImRlbGV0ZTp1c2VyLW1vdmllcyJdLCJpYXQiOjE2MTY5NzM1OTQsImV4cCI6MTYxNjk3NDQ5NH0.xlmnSsOOBduoxhx-wd4lpq_nMjCa0cwV_P6Y9Jw6ecY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Notti bianche, Le (White Nights)\",\r\n  \"year\": 2019,\r\n  \"cover\": \"http://dummyimage.com/800x600.png/ff4444/ffffff\",\r\n  \"description\":\r\n    \"In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\",\r\n  \"duration\": 66,\r\n  \"contentRaiting\": \"G\",\r\n  \"source\": \"https://ovh.net/semper/rutrum/nulla/nunc.jsp\",\r\n  \"tags\": [\r\n    \"Action|Adventure\",\r\n    \"Action|Adventure|Thriller\",\r\n    \"Horror|Western\",\r\n    \"Horror|Thriller\",\r\n    \"Comedy|Romance|Sci-Fi\",\r\n    \"Adventure|Animation|Children|Comedy|Fantasy\",\r\n    \"Drama\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://movies-api-lemon.vercel.app/api/movies",
+					"protocol": "https",
+					"host": [
+						"movies-api-lemon",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener_peliculas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxhbiIsImVtYWlsIjoicHJ1ZWJhc0BnbWFpbC5jb20iLCJzY29wZXMiOlsic2lnbmluOmF1dGgiLCJzaWdudXA6YXV0aCIsInJlYWQ6bW92aWVzIiwicmVhZDp1c2VyLW1vdmllcyIsImNyZWF0ZTp1c2VyLW1vdmllcyIsImRlbGV0ZTp1c2VyLW1vdmllcyJdLCJpYXQiOjE2MTY5NzQ3NTYsImV4cCI6MTYxNjk3NTY1Nn0.F4yTuiIhmv8oAklZ1EpL5q4TIE0DxpbpUpLHi61cSM8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://movies-api-lemon.vercel.app/api/movies",
+					"protocol": "https",
+					"host": [
+						"movies-api-lemon",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener_pelicula_unica",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxhbiIsImVtYWlsIjoicHJ1ZWJhc0BnbWFpbC5jb20iLCJzY29wZXMiOlsic2lnbmluOmF1dGgiLCJzaWdudXA6YXV0aCIsInJlYWQ6bW92aWVzIiwicmVhZDp1c2VyLW1vdmllcyIsImNyZWF0ZTp1c2VyLW1vdmllcyIsImRlbGV0ZTp1c2VyLW1vdmllcyJdLCJpYXQiOjE2MTY5NzQ3NTYsImV4cCI6MTYxNjk3NTY1Nn0.F4yTuiIhmv8oAklZ1EpL5q4TIE0DxpbpUpLHi61cSM8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://movies-api-lemon.vercel.app/api/movies/60274dc83e25b3232465bc4f",
+					"protocol": "https",
+					"host": [
+						"movies-api-lemon",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"movies",
+						"60274dc83e25b3232465bc4f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar_pelicula",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxhbiIsImVtYWlsIjoicHJ1ZWJhc0BnbWFpbC5jb20iLCJzY29wZXMiOlsic2lnbmluOmF1dGgiLCJzaWdudXA6YXV0aCIsInJlYWQ6bW92aWVzIiwicmVhZDp1c2VyLW1vdmllcyIsImNyZWF0ZTp1c2VyLW1vdmllcyIsImRlbGV0ZTp1c2VyLW1vdmllcyJdLCJpYXQiOjE2MTY5NzQ3NTYsImV4cCI6MTYxNjk3NTY1Nn0.F4yTuiIhmv8oAklZ1EpL5q4TIE0DxpbpUpLHi61cSM8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Esta es una prueba de peliiculas\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://movies-api-lemon.vercel.app/api/movies/60274dc83e25b3232465bc4f",
+					"protocol": "https",
+					"host": [
+						"movies-api-lemon",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"movies",
+						"60274dc83e25b3232465bc4f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "pruebas@gmail.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "passwordPruebas",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"apiKeyToken\": \"4cd0165ac78f6f211d84ed7f515125144d1512bbfd9e5b51b9a170664c9e0c64\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://movies-api-lemon.vercel.app/api/auth/sign-in",
+					"protocol": "https",
+					"host": [
+						"movies-api-lemon",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"auth",
+						"sign-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign-up",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Allan\",\r\n    \"email\": \"pruebas2@gmail.com\",\r\n    \"password\": \"passwordPruebas2\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://movies-api-lemon.vercel.app/api/auth/sign-up",
+					"protocol": "https",
+					"host": [
+						"movies-api-lemon",
+						"vercel",
+						"app"
+					],
+					"path": [
+						"api",
+						"auth",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar_pelicula",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/movies/abc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies",
+						"abc"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
